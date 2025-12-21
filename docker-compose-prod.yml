@@ -1,0 +1,18 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: genea_mailer
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    restart: unless-stopped
+
+    networks:
+      - norn-network
+
+networks:
+  norn-network:
+    external: true
