@@ -11,6 +11,8 @@ import { ConfigModule } from '@nestjs/config';
       connection: {
         host: process.env.REDIS_HOST || 'redis',
         port: 6379,
+        password: process.env.REDIS_PASSWORD,
+        db: 1,
       },
     }),
   ],
